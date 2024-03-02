@@ -17,8 +17,13 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 
         mv wp-cli.phar /usr/local/bin/wp
 
-        # Download wordpress
-        wp core download --allow-root
+        wget https://wordpress.org/latest.tar.gz
+	tar -xzvf latest.tar.gz
+	rm -rf latest.tar.gz
+
+        cd wordpress/
+
+        mv * ../ && cd .. && rmdir wordpress
 
         rm -f /var/www/html/wp-config-sample.php
 
@@ -37,7 +42,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
         sed -i -r "s/localhost/mariadb/1"    wp-config.php
 
         sed -i -r "s|site_url|$URL|g" wp-config.php
-        
+
         sed -i -r "s|wp_home|$URL|g" wp-config.php
 fi
 #Config basic option to wordpress (admin user)
