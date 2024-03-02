@@ -1,0 +1,40 @@
+version: '3'
+
+networks:
+  inception:
+    name: inception
+
+services:
+  nginx:
+    container_name: nginx
+    build: requirements/nginx/.
+    image: nginx:final
+    ports:
+     - "443:443"
+    depends_on:
+      - wordpress
+    networks:
+      - inception
+    env_file:
+      - .env
+    restart: always
+  wordpress:
+    container_name: wordpress
+    build: requirements/wordpress/.
+    image: wordpress:final
+    depends_on:
+      - mariadb
+    networks:
+      - inception
+    env_file:
+      - .env
+    restart: always
+  mariadb:
+    container_name: mariadb
+    build: requirements/mariadb/.
+    image: mariadb:final
+    networks:
+      - inception
+    env_file:
+      - .env
+    restart: always

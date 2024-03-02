@@ -6,5 +6,6 @@ COPY ./conf/default.conf /etc/nginx/conf.d/
 
 COPY ./tools/script.sh /
 
-CMD ["bash", "script.sh"]
+EXPOSE 443
 
+CMD ["bash", "script.sh"]
