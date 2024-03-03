@@ -6,6 +6,10 @@ sudo docker run --env-file ~/Desktop/inception/src/.env -it --name test wordpres
 
 #sudo docker exec -it test bash
 
+
+
 #Check Database linking
+#SHOW DATABASES;
 #USE wordpress_db;
+#SHOW TABLES;
 #SELECT * FROM wp_options WHERE option_name IN ('siteurl', 'home');
