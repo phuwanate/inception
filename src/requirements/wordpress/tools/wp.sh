@@ -21,17 +21,19 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	tar -xzvf latest.tar.gz
 	rm -rf latest.tar.gz
 
+        chown -R www-data:www-data /var/www/html/wordpress && chmod -R 755 /var/www/html/wordpress
+
         cd wordpress/
 
-        mv * ../ && cd .. && rmdir wordpress
+        # mv * ../ && cd .. && rmdir wordpress
 
-        rm -f /var/www/html/wp-config-sample.php
+        rm -f wp-config-sample.php
 
         cd /
 
-        mv wp-config.php /var/www/html/
+        mv wp-config.php /var/www/html/wordpress
 
-        cd /var/www/html
+        cd /var/www/html/wordpress
 
         sed -i -r "s/database_name_here/$MYSQL_DATABASE/1"   wp-config.php
 

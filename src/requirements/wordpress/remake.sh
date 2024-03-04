@@ -9,6 +9,7 @@ sudo docker run --env-file ~/Desktop/inception/src/.env -it --name test wordpres
 
 
 #Check Database linking
+#mysql -u plertsir -p -h mariadb -P 3306
 #SHOW DATABASES;
 #USE wordpress_db;
 #SHOW TABLES;

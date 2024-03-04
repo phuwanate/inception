@@ -1,4 +1,4 @@
-FROM debian:12.5
+FROM debian:12
 
 RUN apt-get update && apt-get install nginx -y && apt install openssl -y
 

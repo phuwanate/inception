@@ -1,4 +1,4 @@
-FROM debian:12.5
+FROM debian:12
 
 RUN apt-get update && apt install curl -y && apt install mariadb-client -y
 
@@ -10,6 +10,8 @@ php-gd php-cli \
 php-mbstring
 
 RUN apt install php-fpm php-mysql -y
+
+# RUN chown -R www-data:www-data /var/www/html/wordpress && chmod -R 755 /var/www/html/wordpress
 
 COPY ./tools/wp.sh /
 
