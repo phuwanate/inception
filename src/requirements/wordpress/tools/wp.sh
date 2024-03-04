@@ -53,7 +53,7 @@ wp core install --url=$DOMAIN_NAME/ --title=$WP_TITLE --admin_user=$WP_ADMIN_USE
 #Create new user (second user)
 wp user create $WP_USER $WP_EMAIL --role=author --user_pass=$WP_PASSWORD --allow-root
 
-wp theme install astra --activate --allow-root
+# wp theme install astra --activate --allow-root
 
 #Makes Wordpress listen on port 9000
 sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
