@@ -7,11 +7,9 @@ php \
 php-cgi \
 php-pdo \
 php-gd php-cli \
-php-mbstring
-
-RUN apt install php-fpm php-mysql -y
-
-# RUN chown -R www-data:www-data /var/www/html/wordpress && chmod -R 755 /var/www/html/wordpress
+php-mbstring \
+php-fpm \
+php-mysql
 
 COPY ./tools/wp.sh /
 
