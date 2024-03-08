@@ -1,4 +1,4 @@
-#Check Database Connection
+##Check Database Connection
 
 mysql -u plertsir -p -h mariadb -P 3306
 
