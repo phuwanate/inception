@@ -1,8 +1,12 @@
-all:
-	mkdir /Users/phuwanate/data/; \
-	mkdir /Users/phuwanate/data/wordpress; \
-	mkdir /Users/phuwanate/data/database; \
+all: mkdirs
 	docker compose -f ./srcs/docker-compose.yml up -d
+
+mkdirs:
+	@if [ ! -d "/Users/phuwanate/data/" ]; then \
+		mkdir /Users/phuwanate/data/; \
+		mkdir -p /Users/phuwanate/data/wordpress; \
+		mkdir -p /Users/phuwanate/data/database; \
+	fi
 
 down:
 	docker compose -f ./srcs/docker-compose.yml down
