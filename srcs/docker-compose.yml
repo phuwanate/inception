@@ -1,26 +1,5 @@
 version: '3'
 
-networks:
-  inception:
-    name: inception
-
-volumes:
-  wordpress:
-    name: wordpress
-    driver: local
-    driver_opts:
-      device: /Users/phuwanate/data/wordpress
-      o: bind
-      type: none
-
-  mariadb:
-    name: mariadb
-    driver: local
-    driver_opts:
-      device: /Users/phuwanate/data/database
-      o: bind
-      type: none
-
 services:
   nginx:
     container_name: nginx
@@ -61,3 +40,24 @@ services:
     env_file:
       - .env
     restart: always
+
+networks:
+  inception:
+    name: inception
+
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      device: /Users/phuwanate/Desktop/data/wordpress
+      o: bind
+      type: none
+
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      device: /Users/phuwanate/Desktop/data/database
+      o: bind
+      type: none

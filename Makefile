@@ -1,12 +1,13 @@
 all: mkdirs
-	docker compose -f ./srcs/docker-compose.yml up -d
+	docker compose -f ./srcs/docker-compose.yml up
 
 mkdirs:
-	@if [ ! -d "/Users/phuwanate/data/" ]; then \
-		mkdir /Users/phuwanate/data/; \
-		mkdir -p /Users/phuwanate/data/wordpress; \
-		mkdir -p /Users/phuwanate/data/database; \
-	fi
+	@if [ ! -d "/Users/phuwanate/Desktop/data/" ]; then \
+        sudo mkdir -p /Users/phuwanate/Desktop/data/; \
+        sudo mkdir -p /Users/phuwanate/Desktop/data/wordpress; \
+        sudo mkdir -p /Users/phuwanate/Desktop/data/database; \
+        sudo chown -R phuwanate:staff /Users/phuwanate/Desktop/data; \
+    fi
 
 down:
 	docker compose -f ./srcs/docker-compose.yml down
@@ -18,6 +19,6 @@ clean: down
 
 fclean: clean
 	docker volume rm mariadb wordpress
-	rm -rf /Users/phuwanate/data/
+	sudo rm -rf /Users/phuwanate/Desktop/data/
 
 .PHONY: all down re clean fclean
