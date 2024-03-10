@@ -2,7 +2,7 @@
 
 - To access mysql in wordpress container
 ```
-mysql -u plertsir -p -h mariadb -P 3306
+mysql -u [MYSQL_USER, root] -p -h mariadb -P 3306
 ```
 
 - To list all databases
