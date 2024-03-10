@@ -1,5 +1,5 @@
 all: mkdirs
-	docker compose -f ./srcs/docker-compose.yml up
+	@docker compose -f ./srcs/docker-compose.yml up -d
 
 mkdirs:
 	@if [ ! -d "/Users/phuwanate/Desktop/data/" ]; then \
@@ -10,15 +10,15 @@ mkdirs:
     fi
 
 down:
-	docker compose -f ./srcs/docker-compose.yml down
+	@docker compose -f ./srcs/docker-compose.yml down
 
 re: clean all
 
 clean: down
-	docker rmi nginx:final mariadb:final wordpress:final
+	@docker rmi -f $$(docker images -qa)
 
 fclean: clean
-	docker volume rm mariadb wordpress
+	@docker volume rm $$(docker volume ls -q); \
 	sudo rm -rf /Users/phuwanate/Desktop/data/
 
 .PHONY: all down re clean fclean

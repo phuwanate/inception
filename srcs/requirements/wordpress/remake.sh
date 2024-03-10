@@ -14,3 +14,6 @@ sudo docker run --env-file ~/Desktop/inception/src/.env -it --name test wordpres
 #USE wordpress_db;
 #SHOW TABLES;
 #SELECT * FROM wp_options WHERE option_name IN ('siteurl', 'home');
+
+
+#docker rmi nginx:final mariadb:final wordpress:final
