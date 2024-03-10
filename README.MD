@@ -20,13 +20,13 @@ USE [database_name];
 SHOW TABLES;
 ```
 
-# Database configuration command
+# Database Configuration Command
 - To access mysql with specific user
 ```
 mysql -u [...] -p
 ```
 
-- To execute SQL with commandline
+- To Execute SQL with Commandline
 ```
 -e [SQL Query command]
 ```
