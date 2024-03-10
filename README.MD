@@ -46,7 +46,7 @@ service php8.2-fpm status
 service nginx status
 ```
 
-- TO check list all service
+- TO list all service
 ```
 service --status-all
 ```
