@@ -1,4 +1,4 @@
-# Check Database Connection
+# Database Connection
 
 - To access mysql in wordpress container
 ```
