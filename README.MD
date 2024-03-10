@@ -26,7 +26,7 @@ SHOW TABLES;
 mysql -u [...] -p
 ```
 
-- To Execute SQL with Commandline
+- To execute SQL with commandline
 ```
 -e [SQL Query command]
 ```
@@ -36,7 +36,7 @@ mysql -u [...] -p
 mysqld
 ```
 
-# Service checking command
+# Service Checking Command
 - To check php-fpm status
 ```
 service php8.2-fpm status
