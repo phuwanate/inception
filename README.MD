@@ -28,7 +28,7 @@ mysql -u [...]
 
 - To execute SQL with commandline
 ```
--e -> to execute SQL with commandline
+-e [SQL Query command]
 ```
 
 - Start mysql on foreground process
