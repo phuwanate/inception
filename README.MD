@@ -23,7 +23,7 @@ SHOW TABLES;
 # Database configuration command
 - To access mysql with specific user
 ```
-mysql -u [...]
+mysql -u [...] -p
 ```
 
 - To execute SQL with commandline
