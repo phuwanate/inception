@@ -35,3 +35,20 @@ mysql -u [...] -p
 ```
 mysqld
 ```
+
+# Service checking command
+- To check php-fpm status
+```
+service php8.2-fpm status
+```
+- To check nginx status
+```
+service nginx status
+```
+
+- TO check list all service
+```
+service --status-all
+```
+
+
