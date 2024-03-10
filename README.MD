@@ -12,7 +12,7 @@ USE [database_name];
 - To list all tables
 SHOW TABLES;
 
-# For database configuration command
+# Database configuration command
 - To access mysql with specific user
 mysql -u [...]
 
